@@ -1,1 +1,294 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Harlow Solid Italic;
+  src: url("./assets/fonts/HARLOWSI.TTF");
+  font-weight: regular;
+}
+@font-face {
+  font-family: NEON;
+  src: url("./assets/fonts/NEON.TTF");
+  font-weight: regular;
+}
+@font-face {
+  font-family: Pacifico;
+  src: url("./assets/fonts/Pacifico-Regular.ttf");
+  font-weight: regular;
+}
+
+html,
+body {
+  /* Full height */
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: "Harlow Solid Italic";
+
+  /* Location of the image */
+  background-image: url("./assets/images/brick_wall.png");
+
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+
+  /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color: #464646;
+}
+
+p {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  font-size: 4vw;
+}
+
+svg {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.neonGlowTextPurple {
+  color: #fff;
+  text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+    0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  color: white;
+}
+
+.flexbox-mainLogo {
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+  right: 2%;
+  top: 2%;
+}
+
+.flexbox-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexbox-sensors {
+  position: absolute;
+  bottom: 0;
+  left: 5vw;
+  justify-content: flex-end;
+  align-content: flex-end;
+  justify-items: flex-end;
+}
+
+.flexbox-item-beerButton {
+  position: absolute;
+  bottom: 0vh;
+  right: 2vw;
+}
+
+@-webkit-keyframes hideBeerButton {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes showSecretButton {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes changeToRed {
+  0% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  90% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  100% {
+    text-shadow: 0px 0px 3px #ff0000, 0px 0px 5px #ff0000, 0px 0px 7px #ff0000,
+      0px 0px 10px #ff0000, 0px 0px 15px #ff0000, 0px 0px 30px #ff0000,
+      0px 0px 60px #ff0000, 0px 0px 150px #ff0000;
+  }
+}
+
+@-moz-keyframes hideBeerButton {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes showSecretButton {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes changeToRed {
+  0% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  90% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  100% {
+    text-shadow: 0px 0px 3px #ff0000, 0px 0px 5px #ff0000, 0px 0px 7px #ff0000,
+      0px 0px 10px #ff0000, 0px 0px 15px #ff0000, 0px 0px 30px #ff0000,
+      0px 0px 60px #ff0000, 0px 0px 150px #ff0000;
+  }
+}
+
+@-o-keyframes hideBeerButton {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes showSecretButton {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes changeToRed {
+  0% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  90% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  100% {
+    text-shadow: 0px 0px 3px #ff0000, 0px 0px 5px #ff0000, 0px 0px 7px #ff0000,
+      0px 0px 10px #ff0000, 0px 0px 15px #ff0000, 0px 0px 30px #ff0000,
+      0px 0px 60px #ff0000, 0px 0px 150px #ff0000;
+  }
+}
+
+@keyframes hideBeerButton {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showSecretButton {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes changeToRed {
+  0% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  90% {
+    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
+      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+      0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+  }
+  100% {
+    text-shadow: 0px 0px 3px #ff0000, 0px 0px 5px #ff0000, 0px 0px 7px #ff0000,
+      0px 0px 10px #ff0000, 0px 0px 15px #ff0000, 0px 0px 30px #ff0000,
+      0px 0px 60px #ff0000, 0px 0px 150px #ff0000;
+  }
+}
+
+#spoutControl_secret {
+  -webkit-animation: hideBeerButton 4.5s ease-in forwards;
+  -moz-animation: hideBeerButton 4.5s ease-in forwards;
+  -o-animation: hideBeerButton 4.5s ease-in forwards;
+  animation: hideBeerButton 4.5s ease-in forwards;
+}
+
+#crossBones {
+  position: fixed;
+  bottom: 0;
+  right: 2vw;
+  -webkit-animation: showSecretButton 5.5s ease-in forwards;
+  -moz-animation: showSecretButton 5.5s ease-in forwards;
+  -o-animation: showSecretButton 5.5s ease-in forwards;
+  animation: showSecretButton 5.5s ease-in forwards;
+}
+
+#neonGlowText_secret {
+  -webkit-animation: changeToRed 5.5s ease-in forwards;
+  -moz-animation: changeToRed 5.5s ease-in forwards;
+  -o-animation: changeToRed 5.5s ease-in forwards;
+  animation: changeToRed 5.5s ease-in forwards;
+}
+
+#backArrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: showSecretButton 5.5s ease-in forwards;
+  -moz-animation: showSecretButton 5.5s ease-in forwards;
+  -o-animation: showSecretButton 5.5s ease-in forwards;
+  animation: showSecretButton 5.5s ease-in forwards;
+}

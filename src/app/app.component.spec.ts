@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngGetBeer'`, () => {
+  it(`should have as title 'getBeer'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngGetBeer');
+    expect(app.title).toEqual('getBeer');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ngGetBeer app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('getBeer');
   });
 });

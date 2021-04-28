@@ -105,6 +105,16 @@ svg {
   width: 98%;
 }
 
+.backArrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: showBackArrow 2s ease-in forwards;
+  -moz-animation: showBackArrow 2s ease-in forwards;
+  -o-animation: showBackArrow 2s ease-in forwards;
+  animation: showBackArrow 2s ease-in forwards;
+}
+
 @-webkit-keyframes showBackArrow {
   0% {
     opacity: 0;
@@ -155,14 +165,4 @@ svg {
   100% {
     opacity: 1;
   }
-}
-
-#backArrow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  -webkit-animation: showBackArrow 2s ease-in forwards;
-  -moz-animation: showBackArrow 2s ease-in forwards;
-  -o-animation: showBackArrow 2s ease-in forwards;
-  animation: showBackArrow 2s ease-in forwards;
 }

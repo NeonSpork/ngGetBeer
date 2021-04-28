@@ -4,16 +4,6 @@
   src: url("./assets/fonts/HARLOWSI.TTF");
   font-weight: regular;
 }
-@font-face {
-  font-family: NEON;
-  src: url("./assets/fonts/NEON.TTF");
-  font-weight: regular;
-}
-@font-face {
-  font-family: Pacifico;
-  src: url("./assets/fonts/Pacifico-Regular.ttf");
-  font-weight: regular;
-}
 
 html,
 body {
@@ -32,7 +22,7 @@ body {
   /* Image doesn't repeat */
   background-repeat: no-repeat;
 
-  /* Makes the image fixed in the viewport so that it doesn't move when 
+  /* Makes the image fixed in the viewport so that it doesn't move when
      the content height is greater than the image height */
   background-attachment: fixed;
 
@@ -59,9 +49,16 @@ svg {
 
 .neonGlowTextPurple {
   color: #fff;
-  text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-    0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+  text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+    0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
     0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+}
+
+.neonGlowTextRed {
+  color: #fff;
+  text-shadow: 0px 0px 3px #f00, 0px 0px 5px #f00, 0px 0px 7px #f00,
+    0px 0px 10px #f00, 0px 0px 15px #f00, 0px 0px 30px #f00,
+    0px 0px 60px #f00, 0px 0px 150px #f00;
 }
 
 .content {
@@ -123,13 +120,13 @@ svg {
 
 @-webkit-keyframes changeToRed {
   0% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   90% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   100% {
@@ -163,13 +160,13 @@ svg {
 
 @-moz-keyframes changeToRed {
   0% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   90% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   100% {
@@ -203,13 +200,13 @@ svg {
 
 @-o-keyframes changeToRed {
   0% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   90% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   100% {
@@ -243,13 +240,13 @@ svg {
 
 @keyframes changeToRed {
   0% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   90% {
-    text-shadow: 0px 0px 3px #6302ff, 0px 0px 5px #6302ff, 0px 0px 7px #6302ff,
-      0px 0px 10px #6302ff, 0px 0px 15px #6302ff, 0px 0px 30px #6200ff,
+    text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff,
+      0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff,
       0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
   }
   100% {

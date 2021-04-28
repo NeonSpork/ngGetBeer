@@ -1,3 +1,9 @@
-<app-beer></app-beer>
+<div *ngIf="!secretActive; else secretPage">
+  <app-beer></app-beer>
+</div>
+
+<ng-template #secretPage>
+  <app-secret></app-secret>
+</ng-template>
 
 <router-outlet></router-outlet>

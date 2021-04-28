@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngGetBeer';
+  secretActive=true;
+  clicks=0;
 }

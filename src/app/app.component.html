@@ -1,5 +1,5 @@
-<div *ngIf="!secretActive; else secretPage">
-  <app-beer></app-beer>
+<div *ngIf="secretActive == false; else secretPage">
+    <app-beer></app-beer>
 </div>
 
 <ng-template #secretPage>

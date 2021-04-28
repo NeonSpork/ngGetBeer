@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +18,11 @@ export class AppComponent {
       this.secretActive=true;
     }
   }
+
+  onResetSecret() {
+    this.secretActive=false;
+    this.clicks=-1;
+    // Clicking the back arrow counts as a click within document
+  }
+
 }

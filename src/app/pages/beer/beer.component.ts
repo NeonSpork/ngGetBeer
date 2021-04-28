@@ -15,4 +15,8 @@ export class BeerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openBeer() {
+    this.temp+=1;
+  }
+
 }

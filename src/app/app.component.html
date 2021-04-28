@@ -3,7 +3,7 @@
 </div>
 
 <ng-template #secretPage>
-  <app-secret></app-secret>
+  <app-secret (resetSecret)="onResetSecret($event)"></app-secret>
 </ng-template>
 
 <router-outlet></router-outlet>

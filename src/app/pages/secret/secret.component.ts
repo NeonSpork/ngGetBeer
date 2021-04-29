@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { interval } from 'rxjs';
+import { takeWhile } from "rxjs/operators";
 var rpio = require('rpio');
-import { Board, Thermometer } from 'johnny-five';
-var HX711 = require('@ataberkylmz/hx711');
 
 @Component({
   selector: 'app-secret',
@@ -10,40 +10,41 @@ var HX711 = require('@ataberkylmz/hx711');
 })
 export class SecretComponent implements OnInit {
 
-  // Temperature sensor
-  temp: number = 0;
-
-  // Load sensor
-  clockpin: number = 2;
-  datapin: number = 3;
-  hx = new HX711(this.clockpin, this.datapin);
-
-  // pints: number = 99; // HACK placeholder
-  pints = setInterval(() => { this.calculatePints(); }, 60000);
-
   @Output() resetSecret = new EventEmitter<boolean>();
 
+  vodkaPin = 37;
   constructor() {
     rpio.init({mock: 'raspi-3'});
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    rpio.open(this.vodkaPin, rpio.OUTPUT, rpio.LOW);
   }
 
-  calculatePints() {
-    this.hx.setOffset(8234508);
-    this.hx.setScale(-20.9993);
-    let grams: number = this.hx.getUnits();
-    let approxPints = (grams - 4250) * 0.002;
-    if (approxPints < 0) {
-      approxPints = 0;
-    }
-    return approxPints;
+  ngOnDestroy() {
+    rpio.exit();
   }
 
-  openVodka() {
+  //TODO add input to grab this from Sensor service
+  temp = 0;
+  // Load sensor
 
+  @Output() addClick = new EventEmitter<number>();
+
+  incrementSecretCounter() {
+    // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
+    this.addClick.emit(1);
   }
+
+  // TODO fix this to open beer valve for 10s then close it with:
+  // rpio.write(this.vodkaPin, rpio.LOW)
+  const beerValve = interval(10000)
+  .pipe(takeWhile(() => !stop))
+  .subscribe(() => {
+      openVodka() {
+        rpio.write(this.vodkaPin, rpio.HIGH);
+      }
+    });
 
   backToBeer() {
     this.resetSecret.emit(false);

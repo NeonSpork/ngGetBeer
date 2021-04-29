@@ -22,6 +22,7 @@ export class BeerComponent implements AfterViewInit {
     rpio.exit();
   }
 
+  //TODO add input to grab this from Sensor service
   temp = 0;
   // Load sensor
 
@@ -32,11 +33,13 @@ export class BeerComponent implements AfterViewInit {
     this.addClick.emit(1);
   }
 
+  // TODO fix this to open beer valve for 10s then close it with:
+  // rpio.write(this.beerPin, rpio.LOW)
   const beerValve = interval(10000)
   .pipe(takeWhile(() => !stop))
   .subscribe(() => {
       openBeer() {
-        this.temp += 1;
+        rpio.write(this.beerPin, rpio.HIGH);
       }
     });
 }

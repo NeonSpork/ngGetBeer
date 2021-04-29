@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, AfterViewInit } from '@angular/core';
 var rpio = require('rpio');
 import { Board, Thermometer } from 'johnny-five';
 var hx = require('@ataberkylmz/hx711');
@@ -9,11 +9,11 @@ var hx = require('@ataberkylmz/hx711');
   templateUrl: './beer.component.html',
   styleUrls: ['./beer.component.scss']
 })
-export class BeerComponent implements OnInit {
+export class BeerComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
   }
 
   temp = 0;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
+// import { HX711 } from '@ataberkylmz/hx711';
 
 @Component({
   selector: 'app-secret',
@@ -8,17 +8,38 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class SecretComponent implements OnInit {
 
-  temp=0;
-  pints=99;
+  // Temperature sensor
+  temp: number = 0;
+
+  // Load sensor
+  // clockpin: number = 2;
+  // datapin: number = 3;
+  // hx = new HX711(this.clockpin, this.datapin);
+
+  pints: number = 99; // HACK placeholder
+  // pints = setInterval(() => { this.calculatePints(); }, 60000);
+
   @Output() resetSecret = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  // calculatePints() {
+  //   this.hx.setOffset(8234508);
+  //   this.hx.setScale(-20.9993);
+  //   let grams: number = this.hx.getUnits();
+  //   let approxPints = (grams - 4250) * 0.002;
+  //   if (approxPints < 0) {
+  //     approxPints = 0;
+  //   }
+  //   return approxPints;
+  // }
+
   openVodka() {
-    this.pints-=1;
+
   }
 
   backToBeer() {

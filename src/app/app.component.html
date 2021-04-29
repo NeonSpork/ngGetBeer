@@ -1,5 +1,5 @@
 <div *ngIf="secretActive == false; else secretPage">
-    <app-beer></app-beer>
+    <app-beer (addClick)="onAddClick($event)"></app-beer>
 </div>
 
 <ng-template #secretPage>

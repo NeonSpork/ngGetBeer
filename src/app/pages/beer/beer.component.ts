@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-beer',
@@ -7,12 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerComponent implements OnInit {
 
-  temp=0;
+  @Input() temp=0;
   pints=99;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Output() addClick = new EventEmitter<number>();
+
+  incrementSecretCounter() {
+    // Adds one to click counter when neon sign is clicked
+    this.addClick.emit(1);
+    this.pints-=10;
   }
 
   openBeer() {

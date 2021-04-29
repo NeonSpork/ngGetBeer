@@ -1,3 +1,4 @@
+import { createHostListener } from '@angular/compiler/src/core';
 import { Component, HostListener } from '@angular/core';
 
 @Component({
@@ -10,9 +11,8 @@ export class AppComponent {
   secretActive = false;
   clicks = 0;
 
-  @HostListener('document:click', ['$event'])
-  documentClick(event: MouseEvent) {
-    this.clicks += 1;
+  onAddClick(clickIncrement: number) {
+    this.clicks += clickIncrement;
     if (this.clicks>2) {
       this.clicks=0;
       this.secretActive=true;
@@ -21,8 +21,12 @@ export class AppComponent {
 
   onResetSecret() {
     this.secretActive=false;
-    this.clicks=-1;
-    // Clicking the back arrow counts as a click within document
+    this.clicks=0;
+  }
+
+  @HostListener('document:click', ['$event'])
+  documentClick(event: MouseEvent) {
+    // TODO add cancel pouring of beer/vodka
   }
 
 }

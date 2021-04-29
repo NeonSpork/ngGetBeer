@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-beer',
@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class BeerComponent implements OnInit {
 
-  @Input() temp=0;
+  temp=0;
   pints=99;
 
   constructor() { }
@@ -18,9 +18,8 @@ export class BeerComponent implements OnInit {
   @Output() addClick = new EventEmitter<number>();
 
   incrementSecretCounter() {
-    // Adds one to click counter when neon sign is clicked
+    // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
     this.addClick.emit(1);
-    this.pints-=10;
   }
 
   openBeer() {

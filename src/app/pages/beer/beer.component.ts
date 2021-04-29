@@ -1,4 +1,24 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Board, Thermometer } from 'johnny-five';
+
+const board = new Board();
+
+board.on("ready", () => {
+  // This requires OneWire support using ConfigurableFirmata
+  const thermometer = new Thermometer({
+    controller: "DS18B20",
+    pin: 2
+  });
+
+  thermometer.on("change", () => {
+    const { address, celsius, fahrenheit, kelvin } = thermometer;
+    console.log(`Thermometer at address: 0x${address.toString(16)}`);
+    console.log("  celsius      : ", celsius);
+    console.log("  fahrenheit   : ", fahrenheit);
+    console.log("  kelvin       : ", kelvin);
+    console.log("--------------------------------------");
+  });
+});
 
 @Component({
   selector: 'app-beer',
@@ -7,8 +27,8 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class BeerComponent implements OnInit {
 
-  temp=0;
-  pints=99;
+  temp = board.thermometer.celsius;
+  pints = 99;
 
   constructor() { }
 
@@ -23,7 +43,7 @@ export class BeerComponent implements OnInit {
   }
 
   openBeer() {
-    this.temp+=1;
+    this.temp += 1;
   }
 
 }

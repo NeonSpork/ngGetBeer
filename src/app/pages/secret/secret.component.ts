@@ -24,6 +24,7 @@ export class SecretComponent implements OnInit {
   @Output() resetSecret = new EventEmitter<boolean>();
 
   constructor() {
+    rpio.init({mock: 'raspi-3'});
   }
 
   ngOnInit(): void {

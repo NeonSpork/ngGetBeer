@@ -1,20 +1,30 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnDestroy,
+  Input,
+} from '@angular/core';
 import { interval } from 'rxjs';
-import { takeWhile } from "rxjs/operators";
-var rpio = require('rpio');
+import { takeWhile } from 'rxjs/operators';
+import * as rpio from "rpio";
+import { environment } from 'src/environments/environment';
+// var rpio = require('rpio');
 
 @Component({
   selector: 'app-secret',
   templateUrl: './secret.component.html',
-  styleUrls: ['./secret.component.scss']
+  styleUrls: ['./secret.component.scss'],
 })
-export class SecretComponent implements OnInit {
-
+export class SecretComponent implements AfterViewInit, OnDestroy {
   @Output() resetSecret = new EventEmitter<boolean>();
+  @Input() pints=0;
+  @Input() temp=0;
 
-  vodkaPin = 37;
+  vodkaPin = environment.vodkaPin;
   constructor() {
-    rpio.init({mock: 'raspi-3'});
+    rpio.init({ mock: 'raspi-3' });
   }
 
   ngAfterViewInit(): void {
@@ -26,7 +36,7 @@ export class SecretComponent implements OnInit {
   }
 
   //TODO add input to grab this from Sensor service
-  temp = 0;
+  // temp = 0;
   // Load sensor
 
   @Output() addClick = new EventEmitter<number>();
@@ -38,16 +48,17 @@ export class SecretComponent implements OnInit {
 
   // TODO fix this to open beer valve for 10s then close it with:
   // rpio.write(this.vodkaPin, rpio.LOW)
-  const beerValve = interval(10000)
-  .pipe(takeWhile(() => !stop))
-  .subscribe(() => {
-      openVodka() {
-        rpio.write(this.vodkaPin, rpio.HIGH);
-      }
+  beerValve = interval(10000)
+    .pipe(takeWhile(() => !stop))
+    .subscribe(() => {
+      this.openVodka();
     });
 
   backToBeer() {
     this.resetSecret.emit(false);
   }
 
+  openVodka() {
+    rpio.write(this.vodkaPin, rpio.HIGH);
+  }
 }

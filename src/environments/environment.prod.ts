@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  beerPin:37,
+  vodkaPin:38
 };

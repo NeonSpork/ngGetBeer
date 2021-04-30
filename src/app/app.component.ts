@@ -1,5 +1,6 @@
-import { createHostListener } from '@angular/compiler/src/core';
+// import { createHostListener } from '@angular/compiler/src/core';
 import { Component, HostListener } from '@angular/core';
+import { SensorsService } from './sensors.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,9 @@ export class AppComponent {
   title = 'getBeer';
   secretActive = false;
   clicks = 0;
+
+  constructor(private sensorService:SensorsService){
+  }
 
   onAddClick(clickIncrement: number) {
     this.clicks += clickIncrement;

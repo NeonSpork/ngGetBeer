@@ -6,12 +6,10 @@ var HX711 = require('@ataberkylmz/hx711');
   providedIn: 'root'
 })
 export class SensorsService {
-
-  constructor(
-    private tempRead: number,
-    private pintsRead: number,
-    private hx: typeof HX711,
-  ) {
+  private tempRead: number;
+  private pintsRead: number;
+  private hx: typeof HX711;
+  constructor( ) {
     this.tempRead = 0;
     this.pintsRead = 0;
 
@@ -32,9 +30,9 @@ export class SensorsService {
     // Weight read
     const clockpin: number = 2;
     const datapin: number = 3;
-    hx = new HX711(clockpin, datapin);
-    hx.setOffset(8234508);
-    hx.setScale(-20.9993);
+    this.hx = new HX711(clockpin, datapin);
+    this.hx.setOffset(8234508);
+    this.hx.setScale(-20.9993);
   }
 
   public getTemp() {

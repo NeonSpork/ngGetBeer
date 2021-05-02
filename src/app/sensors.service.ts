@@ -13,26 +13,36 @@ export class SensorsService {
     this.tempRead = 0;
     this.pintsRead = 0;
 
-    // Temp read
-    const board = new Board();
-    board.on("ready", () => {
-      // This requires OneWire support using ConfigurableFirmata
-      const thermometer = new Thermometer({
-        controller: "DS18B20",
-        pin: 4
+    try {
+      // Temp read
+      const board = new Board();
+      board.on("ready", () => {
+        // This requires OneWire support using ConfigurableFirmata
+        const thermometer = new Thermometer({
+          controller: "DS18B20",
+          pin: 4
+        });
+        thermometer.on("change", () => {
+          const { celsius } = thermometer;
+          this.tempRead = celsius;
+        });
       });
-      thermometer.on("change", () => {
-        const { celsius } = thermometer;
-        this.tempRead = celsius;
-      });
-    });
+    }
+    catch(e) {
+      this.tempRead = -99;
+    }
 
+    try {
     // Weight read
     const clockpin: number = 2;
     const datapin: number = 3;
     this.hx = new HX711(clockpin, datapin);
     this.hx.setOffset(8234508);
     this.hx.setScale(-20.9993);
+    }
+    catch(e){
+      this.pintsRead = -99;
+    }
   }
 
   public getTemp() {

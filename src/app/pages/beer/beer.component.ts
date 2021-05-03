@@ -22,7 +22,6 @@ export class BeerComponent implements OnInit {
   addClick() {
     // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
     this.clickCounter++;
-    this.temp++;
     if (this.clickCounter >= this.clicksForSecret) {
       this.secretActive = true;
     }

@@ -1,5 +1,14 @@
-import { Component, Output, OnInit } from '@angular/core';
-var rpio = require('rpio');
+import {
+  Component,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnDestroy,
+  Input,
+} from '@angular/core';
+import { interval } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
+import * as rpio from "rpio";
 
 @Component({
   selector: 'app-beer',
@@ -19,8 +28,15 @@ export class BeerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    rpio.init({ mock: 'raspi-3' });
+    rpio.on('warn', function () { });
+    rpio.open(this.beerPin, rpio.OUTPUT);
+    rpio.open(this.vodkaPin, rpio.OUTPUT);
   }
 
+  ngOnDestroy(): void {
+    rpio.exit();
+  }
 
   addClick() {
     // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked

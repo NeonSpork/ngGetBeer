@@ -98,14 +98,9 @@ class BeerComponent {
         this.clicksForSecret = 3;
     }
     ngOnInit() {
-        this.connector.GetTemp().then((retval) => {
+        this.connector.GetSensorData().then((retval) => {
             retval.subscribe((res) => {
                 this.temp = res;
-            });
-        });
-        this.connector.GetPints().then((retval) => {
-            retval.subscribe((res) => {
-                this.pints = res;
             });
         });
     }
@@ -243,19 +238,10 @@ class FlaskConnectorService {
     // public GetTemp(): number {
     //   return -1;
     // }
-    GetPints() {
+    // TODO parse the json
+    GetSensorData() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.http.get(this.endpoint + 'pints').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
-                return res;
-            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
-                console.log(error);
-                return [error.statusText];
-            }));
-        });
-    }
-    GetTemp() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.http.get(this.endpoint + 'temp').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+            return this.http.get(this.endpoint + 'sensors').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
                 return res;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
                 console.log(error);

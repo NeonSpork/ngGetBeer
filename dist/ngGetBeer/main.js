@@ -46,7 +46,7 @@ function BeerComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "img", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_div_0_Template_img_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.openBeer(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_div_0_Template_img_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.dispenseBeer(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -78,7 +78,7 @@ function BeerComponent_ng_template_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "img", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_ng_template_1_Template_img_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.openVodka(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_ng_template_1_Template_img_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.dispenseVodka(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -128,7 +128,7 @@ class BeerComponent {
     }
 }
 BeerComponent.ɵfac = function BeerComponent_Factory(t) { return new (t || BeerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_flask_connector_service__WEBPACK_IMPORTED_MODULE_1__["FlaskConnectorService"])); };
-BeerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BeerComponent, selectors: [["app-beer"]], decls: 3, vars: 2, consts: [[4, "ngIf", "ngIfElse"], ["secretContent", ""], [1, "content"], [1, "flexbox-mainLogo", 3, "click"], ["src", "./assets/images/craggs_lounge.svg", "alt", "Cool neon sign", 1, "bg_neon"], [1, "flexbox-content"], [1, "flexbox-sensors"], [1, "neonGlowTextPurple"], [1, "flexbox-item-beerButton"], ["src", "./assets/images/beer.svg", "id", "spoutControl", "alt", "Push Button for Beer", 3, "click"], [1, "flexbox-mainLogo"], ["src", "./assets/images/craggs_lounge_red.svg", "alt", "Red neon sign", 1, "bg_neon"], ["src", "./assets/images/back_arrow.svg", "alt", "Left facing neon arrow", 1, "backArrow", 3, "click"], [1, "neonGlowTextRed"], ["src", "./assets/images/crossBones.svg", "alt", "Skull and Cross Bones Neon Sign", 3, "click"]], template: function BeerComponent_Template(rf, ctx) { if (rf & 1) {
+BeerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BeerComponent, selectors: [["app-beer"]], decls: 3, vars: 2, consts: [[4, "ngIf", "ngIfElse"], ["secretContent", ""], [1, "content"], [1, "flexbox-mainLogo", 3, "click"], ["src", "assets/images/craggs_lounge.svg", "alt", "Cool neon sign", 1, "bg_neon"], [1, "flexbox-content"], [1, "flexbox-sensors"], [1, "neonGlowTextPurple"], [1, "flexbox-item-beerButton"], ["src", "assets/images/beer.svg", "id", "spoutControl", "alt", "Push Button for Beer", 3, "click"], [1, "flexbox-mainLogo"], ["src", "assets/images/craggs_lounge_red.svg", "alt", "Red neon sign", 1, "bg_neon"], ["src", "assets/images/back_arrow.svg", "alt", "Left facing neon arrow", 1, "backArrow", 3, "click"], [1, "neonGlowTextRed"], ["src", "assets/images/crossBones.svg", "alt", "Skull and Cross Bones Neon Sign", 3, "click"]], template: function BeerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, BeerComponent_div_0_Template, 12, 2, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, BeerComponent_ng_template_1_Template, 12, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
@@ -261,6 +261,16 @@ class FlaskConnectorService {
                 console.log(error);
                 return [error.statusText];
             }));
+        });
+    }
+    dispenseBeer() {
+        this.http.put(this.endpoint + '/dispenseBeer', {}).subscribe(data => {
+            console.log(data);
+        });
+    }
+    dispenseVodka() {
+        this.http.put(this.endpoint + '/dispenseVodka', {}).subscribe(data => {
+            console.log(data);
         });
     }
 }

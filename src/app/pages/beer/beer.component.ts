@@ -8,7 +8,8 @@ import {
 } from '@angular/core';
 import { interval } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import * as rpio from "rpio";
+import * as gpio from "rpi-gpio";
+import { DIR_OUT } from 'rpi-gpio';
 
 @Component({
   selector: 'app-beer',
@@ -28,14 +29,17 @@ export class BeerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    rpio.init({ mock: 'raspi-3' });
-    rpio.on('warn', function () { });
-    rpio.open(this.beerPin, rpio.OUTPUT);
-    rpio.open(this.vodkaPin, rpio.OUTPUT);
+    // Initialize pins
+    gpio.setup(this.beerPin, gpio.DIR_OUT);
+    gpio.setup(this.vodkaPin, gpio.DIR_OUT);
+    // Set initial state to OFF
+    gpio.write(this.beerPin, false);
+    gpio.write(this.vodkaPin, false);
   }
 
   ngOnDestroy(): void {
-    rpio.exit();
+    gpio.write(this.beerPin, false);
+    gpio.write(this.vodkaPin, false);
   }
 
   addClick() {

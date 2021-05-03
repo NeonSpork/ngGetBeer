@@ -10,7 +10,7 @@
       </div>
 
       <div class="flexbox-item-beerButton">
-        <img (click)="openBeer()" src="assets/images/beer.svg" id="spoutControl" alt="Push Button for Beer" />
+        <img (click)="dispenseLiquid('beer')" src="assets/images/beer.svg" id="spoutControl" alt="Push Button for Beer" />
       </div>
 
     </div>
@@ -28,7 +28,7 @@
         <p class="neonGlowTextRed">{{temp}} &deg;C<br>{{pints}} pints</p>
       </div>
       <div class="flexbox-item-beerButton">
-        <img (click)="openVodka()" src="assets/images/crossBones.svg" alt="Skull and Cross Bones Neon Sign" />
+        <img (click)="dispenseLiquid('vodka')" src="assets/images/crossBones.svg" alt="Skull and Cross Bones Neon Sign" />
       </div>
     </div>
   </div>

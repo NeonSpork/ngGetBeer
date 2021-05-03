@@ -9,7 +9,7 @@ import { catchError, map } from 'rxjs/operators';
 export class FlaskConnectorService {
   endpoint = 'http://localhost:5000/api/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // public GetTemp(): number {
   //   return -1;
@@ -37,5 +37,11 @@ export class FlaskConnectorService {
         return [error.statusText];
       })
     );
+  }
+
+  public dispenseLiquid(liquidType: string) {
+    this.http.put(this.endpoint + '/dispenseLiquid', {}).subscribe(data => {
+      console.log(data);
+    });
   }
 }

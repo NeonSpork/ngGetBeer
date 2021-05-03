@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Harlow Solid Italic;
+  src: url('HARLOWSI.TTF');
+  font-weight: regular;
+}
+html,
+body {
+  /* Full height */
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: "Harlow Solid Italic";
+  /* Location of the image */
+  background-image: url('brick_wall.png');
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+  /* Makes the image fixed in the viewport so that it doesn't move when
+     the content height is greater than the image height */
+  background-attachment: fixed;
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color: #464646;
+}
+p {
+  text-decoration: none;
+  transition: all 0.5s;
+  font-size: 4vw;
+}
+svg {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.neonGlowTextPurple {
+  color: #fff;
+  text-shadow: 0px 0px 3px #6200ff, 0px 0px 5px #6200ff, 0px 0px 7px #6200ff, 0px 0px 10px #6200ff, 0px 0px 15px #6200ff, 0px 0px 30px #6200ff, 0px 0px 60px #6200ff, 0px 0px 150px #6200ff;
+}
+.neonGlowTextRed {
+  color: #fff;
+  text-shadow: 0px 0px 3px #f00, 0px 0px 5px #f00, 0px 0px 7px #f00, 0px 0px 10px #f00, 0px 0px 15px #f00, 0px 0px 30px #f00, 0px 0px 60px #f00, 0px 0px 150px #f00;
+}
+.content {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  color: white;
+}
+.flexbox-mainLogo {
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+  right: 2%;
+  top: 2%;
+}
+.flexbox-content {
+  display: flex;
+  justify-content: space-between;
+}
+.flexbox-sensors {
+  position: absolute;
+  bottom: 0;
+  left: 5vw;
+  justify-content: flex-end;
+  align-content: flex-end;
+  justify-items: flex-end;
+}
+.flexbox-item-beerButton {
+  position: absolute;
+  bottom: 0vh;
+  right: 2vw;
+}
+.bg_neon {
+  position: fixed;
+  min-height: 98%;
+  max-height: 98%;
+  min-width: 98%;
+  max-width: 98%;
+  width: 98%;
+}
+.backArrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: showBackArrow 2s ease-in forwards;
+}
+@keyframes showBackArrow {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map*/

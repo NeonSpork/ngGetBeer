@@ -15,20 +15,9 @@ export class FlaskConnectorService {
   //   return -1;
   // }
 
-  public async GetPints() {
-    return this.http.get(this.endpoint + 'pints').pipe(
-      map((res) => {
-        return res;
-      }),
-      catchError((error) => {
-        console.log(error);
-        return [error.statusText];
-      })
-    );
-  }
-
-  public async GetTemp() {
-    return this.http.get(this.endpoint + 'temp').pipe(
+  // TODO parse the json
+  public async GetSensorData() {
+    return this.http.get(this.endpoint + 'sensors').pipe(
       map((res) => {
         return res;
       }),

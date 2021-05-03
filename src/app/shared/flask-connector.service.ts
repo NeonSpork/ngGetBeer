@@ -39,8 +39,14 @@ export class FlaskConnectorService {
     );
   }
 
-  public dispenseLiquid(liquidType: string) {
-    this.http.put(this.endpoint + '/dispenseLiquid', {}).subscribe(data => {
+  public dispenseBeer() {
+    this.http.put(this.endpoint + '/dispenseBeer', {}).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  public dispenseVodka() {
+    this.http.put(this.endpoint + '/dispenseVodka', {}).subscribe(data => {
       console.log(data);
     });
   }

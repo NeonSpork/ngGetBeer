@@ -1,9 +1,3 @@
-<div *ngIf="secretActive == false; else secretPage">
-    <app-beer (addClick)="onAddClick($event)"></app-beer>
-</div>
-
-<ng-template #secretPage>
-  <app-secret (resetSecret)="onResetSecret($event)"></app-secret>
-</ng-template>
+<app-beer (addClick)="onAddClick($event)"></app-beer>
 
 <router-outlet></router-outlet>

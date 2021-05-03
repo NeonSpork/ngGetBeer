@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FlaskConnectorService {
-  endpoint = 'http://localhost:5000/';
+  endpoint = 'http://localhost:5000/api/';
 
   constructor(private http: HttpClient) {}
 

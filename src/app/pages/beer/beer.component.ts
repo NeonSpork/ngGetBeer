@@ -1,4 +1,5 @@
 import { Component, Output, OnInit } from '@angular/core';
+var rpio = require('rpio');
 
 @Component({
   selector: 'app-beer',

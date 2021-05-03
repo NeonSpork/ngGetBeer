@@ -1,23 +1,32 @@
 import { Component, Output, OnInit } from '@angular/core';
+import { FlaskConnectorService } from 'src/app/shared/flask-connector.service';
 
 @Component({
   selector: 'app-beer',
   templateUrl: './beer.component.html',
-  styleUrls: ['./beer.component.scss']
+  styleUrls: ['./beer.component.scss'],
 })
 export class BeerComponent implements OnInit {
-
   secretActive = false;
-  temp = 0;
-  pints = 99;
+  temp: any;
+  pints: any;
   clickCounter = 0;
   clicksForSecret = 3;
 
-  constructor() { }
+  constructor(private connector: FlaskConnectorService) {}
 
   ngOnInit(): void {
+    this.connector.GetTemp().then((retval) => {
+      retval.subscribe((res) => {        
+        this.temp = res;
+      });
+    });
+    this.connector.GetPints().then((retval) => {
+      retval.subscribe((res) => {
+        this.pints = res;
+      });
+    });
   }
-
 
   addClick() {
     // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
@@ -39,5 +48,4 @@ export class BeerComponent implements OnInit {
   openVodka() {
     // GPIO pin to open vodka
   }
-
 }

@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerComponent } from './pages/beer/beer.component';
+import { FlaskConnectorService } from './shared/flask-connector.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,10 @@ import { BeerComponent } from './pages/beer/beer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FlaskConnectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

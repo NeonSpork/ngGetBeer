@@ -12,6 +12,8 @@ export class BeerComponent implements OnInit {
   pints = 99;
   clickCounter = 0;
   clicksForSecret = 3;
+  beerPin = 37;
+  vodkaPin = 38;
 
   constructor() { }
 

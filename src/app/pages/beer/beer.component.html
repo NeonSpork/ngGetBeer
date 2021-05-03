@@ -1,7 +1,7 @@
 <div *ngIf="secretActive == false; else secretContent">
   <div class="content">
     <div class="flexbox-mainLogo" (click)="addClick()">
-      <img class="bg_neon" src="./assets/images/craggs_lounge.svg" alt="Cool neon sign">
+      <img class="bg_neon" src="assets/images/craggs_lounge.svg" alt="Cool neon sign">
     </div>
     <div class="flexbox-content">
 
@@ -10,7 +10,7 @@
       </div>
 
       <div class="flexbox-item-beerButton">
-        <img (click)="openBeer()" src="./assets/images/beer.svg" id="spoutControl" alt="Push Button for Beer" />
+        <img (click)="openBeer()" src="assets/images/beer.svg" id="spoutControl" alt="Push Button for Beer" />
       </div>
 
     </div>
@@ -20,15 +20,15 @@
 <ng-template #secretContent>
   <div class="content">
     <div class="flexbox-mainLogo">
-      <img class="bg_neon" src="./assets/images/craggs_lounge_red.svg" alt="Red neon sign">
-      <img class="backArrow" (click)="backToBeer()" src="./assets/images/back_arrow.svg" alt="Left facing neon arrow">
+      <img class="bg_neon" src="assets/images/craggs_lounge_red.svg" alt="Red neon sign">
+      <img class="backArrow" (click)="backToBeer()" src="assets/images/back_arrow.svg" alt="Left facing neon arrow">
     </div>
     <div class="flexbox-content">
       <div class="flexbox-sensors">
         <p class="neonGlowTextRed">{{temp}} &deg;C<br>{{pints}} pints</p>
       </div>
       <div class="flexbox-item-beerButton">
-        <img (click)="openVodka()" src="./assets/images/crossBones.svg" alt="Skull and Cross Bones Neon Sign" />
+        <img (click)="openVodka()" src="assets/images/crossBones.svg" alt="Skull and Cross Bones Neon Sign" />
       </div>
     </div>
   </div>

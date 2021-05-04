@@ -96,11 +96,14 @@ class BeerComponent {
         this.secretActive = false;
         this.clickCounter = 0;
         this.clicksForSecret = 3;
+        this.data = {};
     }
     ngOnInit() {
         this.connector.GetSensorData().then((retval) => {
             retval.subscribe((res) => {
-                this.temp = res;
+                this.data = res;
+                this.temp = res.temp;
+                this.pints = res.grams;
             });
         });
     }

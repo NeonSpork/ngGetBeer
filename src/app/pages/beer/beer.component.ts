@@ -13,12 +13,16 @@ export class BeerComponent implements OnInit {
   clickCounter = 0;
   clicksForSecret = 3;
 
+  data={};
+
   constructor(private connector: FlaskConnectorService) {}
 
   ngOnInit(): void {
     this.connector.GetSensorData().then((retval) => {
       retval.subscribe((res) => {
-        this.temp = res;
+        this.data = res;
+        this.temp=res.temp;
+        this.pints=res.grams;
       });
     });
   }

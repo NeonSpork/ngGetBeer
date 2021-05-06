@@ -99,11 +99,14 @@ class BeerComponent {
         this.data = {};
     }
     ngOnInit() {
-        this.connector.GetSensorData().then((retval) => {
+        this.connector.GetTemp().then((retval) => {
             retval.subscribe((res) => {
-                this.data = res;
-                this.temp = res.temp;
-                this.pints = res.grams;
+                this.temp = res;
+            });
+        });
+        this.connector.GetPints().then((retval) => {
+            retval.subscribe((res) => {
+                this.pints = res;
             });
         });
     }
@@ -236,15 +239,24 @@ __webpack_require__.r(__webpack_exports__);
 class FlaskConnectorService {
     constructor(http) {
         this.http = http;
-        this.endpoint = 'http://localhost:5000/api/';
+        this.endpoint = 'http://10.0.0.29/api/'; // TODO set this to a custom hostname
     }
     // public GetTemp(): number {
     //   return -1;
     // }
-    // TODO parse the json
-    GetSensorData() {
+    GetPints() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.http.get(this.endpoint + 'sensors').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+            return this.http.get(this.endpoint + 'pints').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+                return res;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
+                console.log(error);
+                return [error.statusText];
+            }));
+        });
+    }
+    GetTemp() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.http.get(this.endpoint + 'temp').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
                 return res;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
                 console.log(error);

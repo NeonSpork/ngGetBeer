@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FlaskConnectorService {
-  endpoint = 'http://sensorbackend:5000/api/';
+  endpoint = 'http://10.0.0.29/api/'; // TODO set this to a custom hostname
 
   constructor(private http: HttpClient) { }
 
@@ -15,9 +15,20 @@ export class FlaskConnectorService {
   //   return -1;
   // }
 
-  // TODO parse the json
-  public async GetSensorData() {
-    return this.http.get(this.endpoint + 'sensors').pipe(
+  public async GetPints() {
+    return this.http.get(this.endpoint + 'pints').pipe(
+      map((res) => {
+        return res;
+      }),
+      catchError((error) => {
+        console.log(error);
+        return [error.statusText];
+      })
+    );
+  }
+
+  public async GetTemp() {
+    return this.http.get(this.endpoint + 'temp').pipe(
       map((res) => {
         return res;
       }),

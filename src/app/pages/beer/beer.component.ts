@@ -18,11 +18,14 @@ export class BeerComponent implements OnInit {
   constructor(private connector: FlaskConnectorService) {}
 
   ngOnInit(): void {
-    this.connector.GetSensorData().then((retval) => {
+    this.connector.GetTemp().then((retval) => {
       retval.subscribe((res) => {
-        this.data = res;
-        this.temp=res.temp;
-        this.pints=res.grams;
+        this.temp = res;
+      });
+    });
+    this.connector.GetPints().then((retval) => {
+      retval.subscribe((res) => {
+        this.pints = res;
       });
     });
   }

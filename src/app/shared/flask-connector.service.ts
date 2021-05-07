@@ -39,15 +39,51 @@ export class FlaskConnectorService {
     );
   }
 
-  public dispenseBeer() {
-    this.http.put(this.endpoint + '/dispenseBeer', {}).subscribe(data => {
-      console.log(data);
-    });
+  public async OpenBeer() {
+    return this.http.get(this.endpoint + 'openBeer', {}).pipe(
+      map((res) => {
+        return res;
+      }),
+      catchError((error) => {
+        console.log(error);
+        return [error.statusText];
+      })
+    );
   }
 
-  public dispenseVodka() {
-    this.http.put(this.endpoint + '/dispenseVodka', {}).subscribe(data => {
-      console.log(data);
-    });
+  public async OpenVodka() {
+    return this.http.get(this.endpoint + 'openVodka', {}).pipe(
+      map((res) => {
+        return res;
+      }),
+      catchError((error) => {
+        console.log(error);
+        return [error.statusText];
+      })
+    );
+  }
+
+  public async CloseBeer() {
+    return this.http.get(this.endpoint + 'closeBeer', {}).pipe(
+      map((res) => {
+        return res;
+      }),
+      catchError((error) => {
+        console.log(error);
+        return [error.statusText];
+      })
+    );
+  }
+
+  public async CloseVodka() {
+    return this.http.get(this.endpoint + 'closeVodka', {}).pipe(
+      map((res) => {
+        return res;
+      }),
+      catchError((error) => {
+        console.log(error);
+        return [error.statusText];
+      })
+    );
   }
 }

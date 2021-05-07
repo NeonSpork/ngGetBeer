@@ -10,6 +10,8 @@ export class BeerComponent implements OnInit {
   secretActive = false;
   temp: any;
   pints: any;
+  beerState: any;
+  vodkaState: any;
   clickCounter = 0;
   clicksForSecret = 3;
 
@@ -29,7 +31,35 @@ export class BeerComponent implements OnInit {
       });
     });
   }
+  openBeer() {
+    this.connector.OpenBeer().then((retval) => {
+      retval.subscribe((res) => {
+        this.beerState = res;
+      });
+    });
+  }
 
+  openVodka() {
+    this.connector.OpenVodka().then((retval) => {
+      retval.subscribe((res) => {
+        this.vodkaState = res;
+      });
+    });
+  }
+  closeBeer() {
+    this.connector.CloseBeer().then((retval) => {
+      retval.subscribe((res) => {
+        this.beerState = res;
+      });
+    });
+  }
+  closeVodka() {
+    this.connector.CloseVodka().then((retval) => {
+      retval.subscribe((res) => {
+        this.vodkaState = res;
+      });
+    });
+  }
   addClick() {
     // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
     this.clickCounter++;
@@ -43,11 +73,11 @@ export class BeerComponent implements OnInit {
     this.clickCounter = 0;
   }
 
-  openBeer() {
-    // GPIO pin to open beer
-  }
+  // OpenBeer() {
+  //   // GPIO pin to open beer
+  // }
 
-  openVodka() {
-    // GPIO pin to open vodka
-  }
+  // openVodka() {
+  //   // GPIO pin to open vodka
+  // }
 }

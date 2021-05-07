@@ -46,7 +46,7 @@ function BeerComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "img", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_div_0_Template_img_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.dispenseBeer(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mousedown", function BeerComponent_div_0_Template_img_mousedown_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.openBeer(); })("touchstart", function BeerComponent_div_0_Template_img_touchstart_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.openBeer(); })("mouseup", function BeerComponent_div_0_Template_img_mouseup_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r7.closeBeer(); })("touchend", function BeerComponent_div_0_Template_img_touchend_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.closeBeer(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -60,12 +60,12 @@ function BeerComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r0.pints, " pints");
 } }
 function BeerComponent_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "img", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_ng_template_1_Template_img_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.backToBeer(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_ng_template_1_Template_img_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r9.backToBeer(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 5);
@@ -78,7 +78,7 @@ function BeerComponent_ng_template_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "img", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BeerComponent_ng_template_1_Template_img_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.dispenseVodka(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mousedown", function BeerComponent_ng_template_1_Template_img_mousedown_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r11.openVodka(); })("touchstart", function BeerComponent_ng_template_1_Template_img_touchstart_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r12.openVodka(); })("mouseup", function BeerComponent_ng_template_1_Template_img_mouseup_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r13.closeVodka(); })("touchend", function BeerComponent_ng_template_1_Template_img_touchend_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r14.closeVodka(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -110,6 +110,34 @@ class BeerComponent {
             });
         });
     }
+    openBeer() {
+        this.connector.OpenBeer().then((retval) => {
+            retval.subscribe((res) => {
+                this.beerState = res;
+            });
+        });
+    }
+    openVodka() {
+        this.connector.OpenVodka().then((retval) => {
+            retval.subscribe((res) => {
+                this.vodkaState = res;
+            });
+        });
+    }
+    closeBeer() {
+        this.connector.CloseBeer().then((retval) => {
+            retval.subscribe((res) => {
+                this.beerState = res;
+            });
+        });
+    }
+    closeVodka() {
+        this.connector.CloseVodka().then((retval) => {
+            retval.subscribe((res) => {
+                this.vodkaState = res;
+            });
+        });
+    }
     addClick() {
         // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
         this.clickCounter++;
@@ -121,15 +149,9 @@ class BeerComponent {
         this.secretActive = false;
         this.clickCounter = 0;
     }
-    openBeer() {
-        // GPIO pin to open beer
-    }
-    openVodka() {
-        // GPIO pin to open vodka
-    }
 }
 BeerComponent.ɵfac = function BeerComponent_Factory(t) { return new (t || BeerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_flask_connector_service__WEBPACK_IMPORTED_MODULE_1__["FlaskConnectorService"])); };
-BeerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BeerComponent, selectors: [["app-beer"]], decls: 3, vars: 2, consts: [[4, "ngIf", "ngIfElse"], ["secretContent", ""], [1, "content"], [1, "flexbox-mainLogo", 3, "click"], ["src", "assets/images/craggs_lounge.svg", "alt", "Cool neon sign", 1, "bg_neon"], [1, "flexbox-content"], [1, "flexbox-sensors"], [1, "neonGlowTextPurple"], [1, "flexbox-item-beerButton"], ["src", "assets/images/beer.svg", "id", "spoutControl", "alt", "Push Button for Beer", 3, "click"], [1, "flexbox-mainLogo"], ["src", "assets/images/craggs_lounge_red.svg", "alt", "Red neon sign", 1, "bg_neon"], ["src", "assets/images/back_arrow.svg", "alt", "Left facing neon arrow", 1, "backArrow", 3, "click"], [1, "neonGlowTextRed"], ["src", "assets/images/crossBones.svg", "alt", "Skull and Cross Bones Neon Sign", 3, "click"]], template: function BeerComponent_Template(rf, ctx) { if (rf & 1) {
+BeerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BeerComponent, selectors: [["app-beer"]], decls: 3, vars: 2, consts: [[4, "ngIf", "ngIfElse"], ["secretContent", ""], [1, "content"], [1, "flexbox-mainLogo", 3, "click"], ["src", "assets/images/craggs_lounge.svg", "alt", "Cool neon sign", 1, "bg_neon"], [1, "flexbox-content"], [1, "flexbox-sensors"], [1, "neonGlowTextPurple"], [1, "flexbox-item-beerButton"], ["src", "assets/images/beer.svg", "id", "spoutControl", "alt", "Push Button for Beer", 3, "mousedown", "touchstart", "mouseup", "touchend"], [1, "flexbox-mainLogo"], ["src", "assets/images/craggs_lounge_red.svg", "alt", "Red neon sign", 1, "bg_neon"], ["src", "assets/images/back_arrow.svg", "alt", "Left facing neon arrow", 1, "backArrow", 3, "click"], [1, "neonGlowTextRed"], ["src", "assets/images/crossBones.svg", "alt", "Skull and Cross Bones Neon Sign", 3, "mousedown", "touchstart", "mouseup", "touchend"]], template: function BeerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, BeerComponent_div_0_Template, 12, 2, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, BeerComponent_ng_template_1_Template, 12, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
@@ -208,7 +230,7 @@ class AppComponent {
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
 AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], hostBindings: function AppComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_click_HostBindingHandler($event) { return ctx.documentClick($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveDocument"]);
-    } }, decls: 2, vars: 0, consts: [[3, "addClick"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 2, vars: 0, consts: [["oncontextmenu", "return false", 3, "addClick"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "app-beer", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("addClick", function AppComponent_Template_app_beer_addClick_0_listener($event) { return ctx.onAddClick($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -264,14 +286,44 @@ class FlaskConnectorService {
             }));
         });
     }
-    dispenseBeer() {
-        this.http.put(this.endpoint + '/dispenseBeer', {}).subscribe(data => {
-            console.log(data);
+    OpenBeer() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.http.get(this.endpoint + 'openBeer', {}).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+                return res;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
+                console.log(error);
+                return [error.statusText];
+            }));
         });
     }
-    dispenseVodka() {
-        this.http.put(this.endpoint + '/dispenseVodka', {}).subscribe(data => {
-            console.log(data);
+    OpenVodka() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.http.get(this.endpoint + 'openVodka', {}).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+                return res;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
+                console.log(error);
+                return [error.statusText];
+            }));
+        });
+    }
+    CloseBeer() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.http.get(this.endpoint + 'closeBeer', {}).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+                return res;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
+                console.log(error);
+                return [error.statusText];
+            }));
+        });
+    }
+    CloseVodka() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.http.get(this.endpoint + 'closeVodka', {}).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
+                return res;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])((error) => {
+                console.log(error);
+                return [error.statusText];
+            }));
         });
     }
 }

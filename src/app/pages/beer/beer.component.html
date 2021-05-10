@@ -5,7 +5,7 @@
     </div>
     <div class="flexbox-content">
       <div class="flexbox-sensors">
-        <p class="neonGlowTextPurple">{{temp}} &deg;C<br>{{pints}} pints</p>
+        <p class="neonGlowTextPurple">{{temp | number:'1.1-1'}} &deg;C<br>{{pints | number:'1.0-0'}} pints</p>
       </div>
 
       <div class="flexbox-item-beerButton">
@@ -24,7 +24,7 @@
     </div>
     <div class="flexbox-content">
       <div class="flexbox-sensors">
-        <p class="neonGlowTextRed">{{temp}} &deg;C<br>{{pints}} pints</p>
+        <p class="neonGlowTextRed">{{temp | number:'1.1-1'}} &deg;C<br>{{pints | number:'1.0-0'}} pints</p>
       </div>
       <div class="flexbox-item-beerButton">
         <img (mousedown)="openVodka()" (touchstart)="openVodka()" (mouseup)="closeVodka()" (touchend)="closeVodka()" src="assets/images/crossBones.svg" alt="Skull and Cross Bones Neon Sign" />

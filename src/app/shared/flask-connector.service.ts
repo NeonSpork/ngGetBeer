@@ -7,7 +7,10 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FlaskConnectorService {
-  endpoint = 'http://192.168.10.99/api/'; // TODO set this to a custom hostname
+
+  // NOTE: this IP must be reserved on the router
+  // Alternatively set a custom hostname and change accordingly
+  endpoint = 'http://192.168.10.99/api/';
 
   constructor(private http: HttpClient) { }
 

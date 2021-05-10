@@ -7,13 +7,9 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FlaskConnectorService {
-  endpoint = 'http://10.0.0.29/api/'; // TODO set this to a custom hostname
+  endpoint = 'http://192.168.10.99/api/'; // TODO set this to a custom hostname
 
   constructor(private http: HttpClient) { }
-
-  // public GetTemp(): number {
-  //   return -1;
-  // }
 
   public async GetPints() {
     return this.http.get(this.endpoint + 'pints').pipe(

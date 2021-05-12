@@ -103,6 +103,9 @@ class BeerComponent {
         this.data = {};
     }
     ngOnInit() {
+        this.getSensorData();
+    }
+    getSensorData() {
         this.connector.GetTemp().then((retval) => {
             retval.subscribe((res) => {
                 this.temp = res;
@@ -113,6 +116,7 @@ class BeerComponent {
                 this.pints = res;
             });
         });
+        setTimeout(this.getSensorData.bind(this), 1000);
     }
     openBeer() {
         this.connector.OpenBeer().then((retval) => {

@@ -1,4 +1,6 @@
 import { Component, Output, OnInit } from '@angular/core';
+import { setupTestingRouter } from '@angular/router/testing';
+import { interval } from 'rxjs';
 import { FlaskConnectorService } from 'src/app/shared/flask-connector.service';
 
 @Component({
@@ -15,11 +17,17 @@ export class BeerComponent implements OnInit {
   clickCounter = 0;
   clicksForSecret = 3;
 
-  data={};
+  data = {};
 
-  constructor(private connector: FlaskConnectorService) {}
+  constructor(private connector: FlaskConnectorService) {
+
+  }
 
   ngOnInit(): void {
+    this.getSensorData();
+  }
+
+  getSensorData() {
     this.connector.GetTemp().then((retval) => {
       retval.subscribe((res) => {
         this.temp = res;
@@ -30,7 +38,9 @@ export class BeerComponent implements OnInit {
         this.pints = res;
       });
     });
+    setTimeout(this.getSensorData.bind(this), 10000);
   }
+
   openBeer() {
     this.connector.OpenBeer().then((retval) => {
       retval.subscribe((res) => {
@@ -46,6 +56,7 @@ export class BeerComponent implements OnInit {
       });
     });
   }
+
   closeBeer() {
     this.connector.CloseBeer().then((retval) => {
       retval.subscribe((res) => {
@@ -53,6 +64,7 @@ export class BeerComponent implements OnInit {
       });
     });
   }
+
   closeVodka() {
     this.connector.CloseVodka().then((retval) => {
       retval.subscribe((res) => {
@@ -60,6 +72,7 @@ export class BeerComponent implements OnInit {
       });
     });
   }
+
   addClick() {
     // Adds one to click counter when neon sign (div id="flexbox-mainLogo") is clicked
     this.clickCounter++;
@@ -72,12 +85,4 @@ export class BeerComponent implements OnInit {
     this.secretActive = false;
     this.clickCounter = 0;
   }
-
-  // OpenBeer() {
-  //   // GPIO pin to open beer
-  // }
-
-  // openVodka() {
-  //   // GPIO pin to open vodka
-  // }
 }

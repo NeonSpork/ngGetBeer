@@ -38,7 +38,7 @@ export class BeerComponent implements OnInit {
         this.pints = res;
       });
     });
-    setTimeout(this.getSensorData.bind(this), 10000);
+    setTimeout(this.getSensorData.bind(this), 1000);
   }
 
   openBeer() {

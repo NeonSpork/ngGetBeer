@@ -1,4 +1,4 @@
-# getBeer
+# getBeer - FRONTEND
 
 ![Default neon sign logo](https://raw.githubusercontent.com/NeonSpork/ngGetBeer/main/src/assets/images/craggs_lounge.svg)
 

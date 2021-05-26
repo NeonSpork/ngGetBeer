@@ -1,3 +1,4 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/9a98e969b5a1844a900a/maintainability)](https://codeclimate.com/github/NeonSpork/ngGetBeer/maintainability)
 # getBeer - FRONTEND
 
 ![Default neon sign logo](https://raw.githubusercontent.com/NeonSpork/ngGetBeer/main/src/assets/images/craggs_lounge.svg)

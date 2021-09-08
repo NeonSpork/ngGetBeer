@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerComponent } from './pages/beer/beer.component';
-import { FlaskConnectorService } from './shared/flask-connector.service';
+import { GpioControllerService } from './shared/gpio-controller.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [FlaskConnectorService],
+  providers: [GpioControllerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

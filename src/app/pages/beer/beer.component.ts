@@ -1,7 +1,7 @@
 import { Component, Output, OnInit } from '@angular/core';
 import { setupTestingRouter } from '@angular/router/testing';
 import { interval } from 'rxjs';
-import { FlaskConnectorService } from 'src/app/shared/flask-connector.service';
+import { GpioControllerService } from 'src/app/shared/gpio-controller.service';
 
 @Component({
   selector: 'app-beer',
@@ -19,7 +19,7 @@ export class BeerComponent implements OnInit {
 
   data = {};
 
-  constructor(private connector: FlaskConnectorService) {
+  constructor(private connector: GpioControllerService) {
 
   }
 

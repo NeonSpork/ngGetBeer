@@ -6,7 +6,7 @@ import { catchError, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class FlaskConnectorService {
+export class GpioControllerService {
 
   // NOTE: this IP must be reserved on the router
   // Alternatively set a custom hostname and change accordingly

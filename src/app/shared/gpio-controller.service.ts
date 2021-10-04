@@ -10,7 +10,7 @@ export class GpioControllerService {
 
   // NOTE: this IP must be reserved on the router
   // Alternatively set a custom hostname and change accordingly
-  endpoint = 'http://192.168.0.150/api/';
+  endpoint = 'http://192.168.0.111/api/';
 
   constructor(private http: HttpClient) { }
 
